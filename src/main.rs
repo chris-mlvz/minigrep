@@ -22,6 +22,9 @@ struct Config<'a> {
 
 impl<'a> Config<'a> {
     fn new(args: &[String]) -> Config {
+        if args.len() < 3 {
+            panic!("not enough arguments");
+        }
         let query = &args[1];
         let filename = &args[2];
 
